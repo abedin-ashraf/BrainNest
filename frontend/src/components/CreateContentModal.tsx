@@ -4,7 +4,7 @@ import { Input } from "./Input"
 import { Button } from "./Button"
 
 //Controlled Component
-export function CreateContentModal({ open, onClose }) {
+export function CreateContentModal({ open, onClose }: { open: boolean, onClose: () => void }) {
 
     return <div>
         {open && <div className="w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-60 flex justify-center">
@@ -16,11 +16,11 @@ export function CreateContentModal({ open, onClose }) {
                         </div>
                     </div>
                     <div>
-                        <Input placeholder={"tiltle"} />
-                        <Input placeholder={"link"} />
+                        <Input placeholder={"tiltle"} onChange={() => { }} />
+                        <Input placeholder={"link"} onChange={() => { }} />
                     </div>
                     <div className="flex justify-center">
-                        <Button variant="primary" text="Submit"></Button>
+                        <Button variant="primary" text="Submit" startIcon={<></>}></Button>
                     </div>
                 </span>
             </div>
