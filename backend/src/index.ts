@@ -5,10 +5,12 @@ import { JWT_PASSWORD } from "./config";
 import { userMiddleWare } from "./middleware";
 import { random, hashedPassword, verifyPassword } from "./utils";
 import zod from "zod";
+import cors from 'cors'
 
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Creating userSchema for zod validation
 const userSchema = zod.object({
@@ -98,8 +100,10 @@ app.post("/api/v1/signin", async (req, res) => {
 app.post("/api/v1/content", userMiddleWare, (req, res) => {
     const link = req.body.link;
     const type = req.body.type;
+    const title = req.body.title;
 
     ContentModel.create({
+        title,
         link,
         type,
         //@ts-ignore

@@ -20,6 +20,7 @@ const UserSchema = new Schema({
 const ContentSchema = new Schema({
     title: String,
     link: String,
+    type: String, //convert it into enum with youtube, twitter, instagram, etc
     tags: [{ type: mongoose.Types.ObjectId, ref: "Tag" }],
     userId: { type: mongoose.Types.ObjectId, ref: "User", required: true }
 })

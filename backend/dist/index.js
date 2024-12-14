@@ -19,8 +19,11 @@ const config_1 = require("./config");
 const middleware_1 = require("./middleware");
 const utils_1 = require("./utils");
 const zod_1 = __importDefault(require("zod"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
+app.use((0, cors_1.default)());
+// Creating userSchema for zod validation
 const userSchema = zod_1.default.object({
     username: zod_1.default.string().email({
         message: "username should be email"
@@ -99,7 +102,9 @@ app.post("/api/v1/signin", (req, res) => __awaiter(void 0, void 0, void 0, funct
 app.post("/api/v1/content", middleware_1.userMiddleWare, (req, res) => {
     const link = req.body.link;
     const type = req.body.type;
+    const title = req.body.title;
     db_1.ContentModel.create({
+        title,
         link,
         type,
         //@ts-ignore
