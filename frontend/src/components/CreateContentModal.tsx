@@ -15,7 +15,7 @@ export function CreateContentModal({ open, onClose }: { open: boolean, onClose: 
     const titleRef = useRef<HTMLInputElement>();
     const linkRef = useRef<HTMLInputElement>();
     const typeRef = useRef<HTMLInputElement>();
-    const [type, setType] = useState(ContentType.Youtube);
+    // const [type, setType] = useState(ContentType.Youtube);
 
 
     async function addContent() {
