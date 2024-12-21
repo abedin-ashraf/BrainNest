@@ -1,14 +1,14 @@
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { XMark } from "../icons/XIcon"
 import { Input } from "./Input"
 import { Button } from "./Button"
 import axios from "axios"
 import { BACKEND_URL } from "../config"
 
-enum ContentType {
-    Youtube = "youtube",
-    Twitter = "twitter"
-}
+// enum ContentType {
+//     Youtube = "youtube",
+//     Twitter = "twitter"
+// }
 
 //Controlled Component
 export function CreateContentModal({ open, onClose }: { open: boolean, onClose: () => void }) {
