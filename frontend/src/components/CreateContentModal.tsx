@@ -50,10 +50,10 @@ export function CreateContentModal({ open, onClose }: { open: boolean, onClose: 
                                 </div>
                             </div>
                             <div>
-                                <Input reference={titleRef} placeholder={"tiltle"} />
-                                <Input reference={linkRef} placeholder={"link"} />
+                                <Input type="text" reference={titleRef} placeholder={"tiltle"} />
+                                <Input type="text" reference={linkRef} placeholder={"link"} />
                                 {/* Add react select to select type */}
-                                <Input reference={typeRef} placeholder={"type"} />
+                                <Input type="text" reference={typeRef} placeholder={"type"} />
                             </div>
                             <div className="flex justify-center">
                                 <Button onClick={addContent} variant="primary" text="Submit" startIcon={<></>}></Button>

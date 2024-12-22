@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 interface ButtonProps {
     variant: "primary" | "secondary";
-    text: string;
+    text?: string;
     startIcon?: ReactElement;
     onClick?: () => void;
     fullWidth?: boolean;
