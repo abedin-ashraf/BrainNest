@@ -89,12 +89,12 @@ export function Signin() {
             {/* Footer */}
             <div className="text-center text-sm pt-2">
                 <span className="text-gray-500">Don't have an account?</span>{" "}
-                <a
-                    href="/signup"
+                <button
+                    onClick={() => { navigate('/signup') }}
                     className="text-purple-600 hover:text-purple-700 font-medium"
                 >
                     Sign up
-                </a>
+                </button>
             </div>
 
         </div>
