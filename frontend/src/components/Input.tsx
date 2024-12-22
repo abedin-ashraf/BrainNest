@@ -2,7 +2,7 @@ interface InputProps {
     placeholder: string,
     reference?: any
     className?: string,
-    type: string
+    type?: string
 }
 
 export function Input({ placeholder, reference, className, type }: InputProps) {

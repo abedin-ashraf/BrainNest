@@ -20,7 +20,7 @@ function Dashboard() {
     }, [modalOpen])
 
     function logout() {
-        localStorage.removeItem('Authorization');
+        localStorage.removeItem('token');
         navigate('/signin');
     }
 
