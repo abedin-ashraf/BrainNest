@@ -7,14 +7,22 @@ import { CreateContentModal } from '../components/CreateContentModal'
 import { useEffect, useState } from 'react'
 import { Sidebar } from '../components/Sidebar'
 import { useContent } from '../hooks/useContent'
+import { useNavigate } from 'react-router-dom'
+import { LogOutIcon } from 'lucide-react'
 
 function Dashboard() {
     const [modalOpen, setModalOpen] = useState(false);
     const { contents, refresh } = useContent();
+    const navigate = useNavigate();
 
     useEffect(() => {
         refresh()
     }, [modalOpen])
+
+    function logout() {
+        localStorage.removeItem('Authorization');
+        navigate('/signin');
+    }
 
     return <div>
         <Sidebar />
@@ -23,6 +31,7 @@ function Dashboard() {
             <div className='flex justify-end gap-4'>
                 <Button onClick={() => { setModalOpen(true) }} variant="primary" text="Add Content" startIcon={<PlusIcon />}></Button>
                 <Button variant="secondary" text="Share Brain" startIcon={<ShareIcon />}></Button>
+                <Button variant='logout' text='Logout' onClick={logout} startIcon={<LogOutIcon />} />
             </div>
             <div className='flex gap-4 flex-wrap'>
                 {contents.map(({ type, link, title }) =>
