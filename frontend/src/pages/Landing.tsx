@@ -23,7 +23,7 @@ export default function LandingPage() {
                         <a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
                     </nav>
                     <div className="flex items-center space-x-4">
-                        <a href="/signin" className="text-gray-600 hover:text-gray-900">Sign in</a>
+                        <Button variant="secondary" onClick={() => { navigate('/signin') }} text="Sign in" />
                         <Button variant="primary" onClick={() => { navigate('/signup') }} text="Get Started" />
                     </div>
                 </div>
