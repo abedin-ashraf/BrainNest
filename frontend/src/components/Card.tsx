@@ -1,14 +1,30 @@
 import { DeleteIcon } from "../icons/DeleteIcon";
 import { ExternalOpen } from "../icons/ExternalOpen";
 import { ShareIcon } from "../icons/ShareIcon";
+import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 interface CardProps {
+    id: string;
     title: string;
     link: string;
     type: "twitter" | "youtube";
 }
 
-export function Card({ title, link, type }: CardProps) {
+export function Card({ id, title, link, type }: CardProps) {
+
+    function deletePost() {
+        axios.delete(`${BACKEND_URL}/api/v1/content`, {
+            headers: {
+                "authorization": localStorage.getItem("token")
+            },
+            data: {
+                contentId: id
+            }
+        })
+    }
+
+
     return <div>
         <div className="p-4 bg-white rounded-md border border-gray-200 max-w-72 min-h-48 min-w-72">
             <div className="flex justify-between">
@@ -22,7 +38,7 @@ export function Card({ title, link, type }: CardProps) {
                             <ExternalOpen />
                         </a>
                     </div>
-                    <div className="text-gray-500"><DeleteIcon /></div>
+                    <div className="text-gray-500 cursor-pointer" onClick={deletePost}><DeleteIcon /></div>
                 </div>
             </div>
 

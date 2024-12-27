@@ -34,8 +34,8 @@ function Dashboard() {
                 <Button variant='logout' text='Logout' onClick={logout} startIcon={<LogOutIcon />} />
             </div>
             <div className='flex gap-4 flex-wrap'>
-                {contents.map(({ type, link, title }) =>
-                    <Card type={type} link={link} title={title}></Card>
+                {contents.map(({ type, link, title, id }) =>
+                    <Card id={id} type={type} link={link} title={title}></Card>
                 )}
                 {/* 
                 <Card type="youtube" link="https://www.youtube.com/watch?v=Oo3qsxihXqY" title="Youtube" /> */}
