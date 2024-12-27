@@ -3,6 +3,7 @@ import { YoutubeIcon } from "../icons/YoutubeIcon"
 import { SidebarItem } from "./SidebarItem"
 import { Logo } from "../icons/Logo"
 import { InstagramIcon } from "../icons/InstagramIcon"
+import { FacebookIcon } from "../icons/FacebookIcon"
 
 
 export function Sidebar() {
@@ -15,6 +16,7 @@ export function Sidebar() {
             <SidebarItem text="Youtube" icon={<YoutubeIcon />} />
             <SidebarItem text="Twitter" icon={<TwitterIcon />} />
             <SidebarItem text="Instagram" icon={<InstagramIcon />} />
+            <SidebarItem text="Facebook" icon={<FacebookIcon />} />
 
         </div>
     </div>
