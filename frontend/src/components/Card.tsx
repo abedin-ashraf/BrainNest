@@ -14,7 +14,7 @@ interface CardProps {
 export function Card({ id, title, link, type }: CardProps) {
 
     function deletePost() {
-        axios.delete(`${BACKEND_URL}/api/v1/content`, {
+        axios.delete(`${BACKEND_URL}/api/v1/contentDelete`, {
             headers: {
                 "authorization": localStorage.getItem("token")
             },
