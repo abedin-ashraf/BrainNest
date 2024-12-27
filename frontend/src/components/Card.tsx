@@ -14,12 +14,11 @@ interface CardProps {
 export function Card({ id, title, link, type }: CardProps) {
 
     function deletePost() {
-        axios.delete(`${BACKEND_URL}/api/v1/contentDelete`, {
+        axios.post(`${BACKEND_URL}/api/v1/contentDelete`, {
+            id
+        }, {
             headers: {
-                "authorization": localStorage.getItem("token")
-            },
-            data: {
-                contentId: id
+                "Authorization": localStorage.getItem("token")
             }
         })
     }
