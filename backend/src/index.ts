@@ -128,10 +128,10 @@ app.get("/api/v1/content", userMiddleWare, async (req, res) => {
 })
 app.delete("/api/v1/contentDelete", userMiddleWare, async (req, res) => {
     const contentId = req.body.contentId;
-    await ContentModel.deleteMany({
+    await ContentModel.deleteOne({
         contentId,
         //@ts-ignore
-        // userId: req.userId
+        userId: req.userId
     })
     res.json({
         message: "Deleted"
