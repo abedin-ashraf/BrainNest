@@ -1,4 +1,5 @@
 import { DeleteIcon } from "../icons/DeleteIcon";
+import { ExternalOpen } from "../icons/ExternalOpen";
 import { ShareIcon } from "../icons/ShareIcon";
 
 interface CardProps {
@@ -18,7 +19,7 @@ export function Card({ title, link, type }: CardProps) {
                 <div className="flex items-center">
                     <div className="pr-2 text-gray-500">
                         <a href={link} target="_blank">
-                            <ShareIcon />
+                            <ExternalOpen />
                         </a>
                     </div>
                     <div className="text-gray-500"><DeleteIcon /></div>
