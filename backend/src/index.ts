@@ -131,7 +131,7 @@ app.delete("/api/v1/content", userMiddleWare, async (req, res) => {
     await ContentModel.deleteOne({
         contentId,
         //@ts-ignore
-        userId: req.userId
+        // userId: req.userId
     })
     res.json({
         message: "Deleted"

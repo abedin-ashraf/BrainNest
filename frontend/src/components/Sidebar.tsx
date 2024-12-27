@@ -2,6 +2,7 @@ import { TwitterIcon } from "../icons/TwitterIcon"
 import { YoutubeIcon } from "../icons/YoutubeIcon"
 import { SidebarItem } from "./SidebarItem"
 import { Logo } from "../icons/Logo"
+import { InstagramIcon } from "../icons/InstagramIcon"
 
 
 export function Sidebar() {
@@ -11,8 +12,10 @@ export function Sidebar() {
             BrainNest
         </div>
         <div className="pt-4 pl-4">
-            <SidebarItem text="Twitter" icon={<TwitterIcon />} />
             <SidebarItem text="Youtube" icon={<YoutubeIcon />} />
+            <SidebarItem text="Twitter" icon={<TwitterIcon />} />
+            <SidebarItem text="Instagram" icon={<InstagramIcon />} />
+
         </div>
     </div>
 }
